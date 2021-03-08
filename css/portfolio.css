@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+/* 태그 초기화 */
+* {margin: 0; padding: 0;} 
+img {vertical-align: top; border: none;}
+button {margin: 0; padding: 0; border: none; background: none; font-size: 100%;}
+a:link, a:visited, a:hover, a:active {text-decoration: none;}
+ul, li {list-style: none;}
+
+/* 공통 클래스 */
+.scene {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; font-family: 'NanumSquare', sans-serif;}
+.area {position: relative;}
+
+/* -------------------------로딩페이지------------------------- */
+#go {display: flex; justify-content: center; align-items: center; background: #F6E7A9; z-index: 1100; display: none;}
+#go img {width: 696px;}
+       
+/* wave 버튼효과 */
+.wavebtn {position: absolute; transform: translateX(-50%); width: 80px; height: 80px;}
+#wavebtn1 {top: 70px; left: 49%;}
+.wavebtn .txt, .wavebtn .circle {display: block;}
+.wavebtn .txt {position: absolute; top: -10px; left: 2px; line-height: 10px; width: 100%; text-align: center; color: #fff; animation: animate 1.3s infinite alternate;}
+
+@keyframes animate {
+    0% {transform: translate(0,-10px);}
+    100% {transform: translate(0,10px);}
+}
+
+.circle {position: relative; width: 80px; height: 80px;}
+.circle span {position: absolute; left: 0; right: 0; margin: 0 auto; border-radius: 50%;}
+.circle .c1 {border: 1px solid #fff; background: none;}
+.circle .c2 {border: 2px solid #fff; background: none;}
+.circle .c3 {background: #fff; cursor: pointer;}
+.circle .c4 {background: #fff; cursor: pointer; filter : blur(3px);}
+
+/* top, widht, height, animation */
+.circle .c1 {top: 0; width: 100%; height: 100%; animation: wave1 1.7s linear infinite;}
+
+.circle .c2 {top: calc(100% / 6); width: calc(100% * 2/3); height: calc(100% * 2/3); animation: wave2 1.7s linear infinite;}
+
+/* 애니메이션 없이 가운데 고정 되어 있다 */
+.circle .c3 {top: calc(100% / 2.3); width: calc(100% * 1/6); height: calc(100% * 1/6);}
+.circle .c4 {top: calc(100% / 2.3); width: calc(100% * 1/6); height: calc(100% * 1/6);}
+
+/* .c1 */
+@keyframes wave1 {
+    0% {transform: scale(0); opacity: 1;}
+    50% {transform: scale(1.2); opacity: 0;}
+    /* 2초 중에서 1초 동안만 크기가 변화, 나머지 1초는 유지 */
+    100% {transform: scale(1.2); opacity: 0;}
+}
+
+/* .c2 */
+@keyframes wave2 {
+    0% {transform: scale(0); opacity: 1;}
+    100% {transform: scale(1.2); opacity: 0;}
+}
+
+/* -------------------------처음페이지------------------------- */
+#castle {display: flex; justify-content: center; align-items: flex-end; z-index: 1000; background: url("../svg/2-2castle/background.svg") no-repeat center; 
+    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; display: none;}
+#castle img#magic {position: relative;width: 565px; z-index: 970;}
+
+/* 네비게이션 */
+#nav {position: absolute; top: 8%; left: 4%;  z-index: 990;}
+#nav .navbox {display: flex; width: 1000px;}
+#nav .navbox .logo {margin-right: 20px;}
+#nav .navbox .logo img {width: 140px;}
+#gnb {width: 600px; height: 70px;}
+#gnb ul {display: flex;}
+#gnb ul li a {display: block; width: 100px; height: 65px; text-align: center; line-height: 65px; font-size: 18px; color: #fff;}
+/* 가상선택자 도형 */
+#gnb ul li {position: relative;}
+#gnb ul li::after {content: ""; position: absolute; top: 43%; right: 0; width: 6px; height: 6px; background: #fff; transform: rotate(45deg); opacity: 0.7;}
+#gnb ul li:nth-child(2) {padding: 0 7px;}
+#gnb ul li:nth-child(4) {padding: 0 15px;}
+#gnb ul li:not(.dpchange)::after {display: none;}
+
+/* 로고와 소개글 */
+#cosmic {width: 1000px; top: 100px; left: -217px; z-index: 980; animation: scale1 6s alternate ease-out;}
+#cosmic img {width: 200px; margin: 22px 40%;}
+#cosmic p {font-size: 17px; line-height: 24px; text-align: center; color: #fff; text-shadow: 0px 0px 5px #0e0b07;}
+
+/* #cosmic */
+@keyframes scale1 {
+    0% {transform: scale(0); opacity: 0;}
+    50% {transform: scale(0); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+/* wave 버튼위치 */
+#wavebtn2 {top: 520px; left: 50.4%;z-index: 970;}
+
+/* 공통 클래스 */
+.bg_rear {display: flex;}
+.ads {position: absolute;}
+
+/* 뒷 배경 산등성이 */
+#mount1 {width: 690px; left: 85%; bottom: -5%; z-index: 950;}
+#mount2 {width: 600px; left: -100%; bottom: -5%; z-index: 940;}
+#mount3 {width: 600px; left: 107%; bottom: 28%; z-index: 930;}
+#mount4 {width: 500px; left: -105%; bottom: 27%; z-index: 920;}
+
+/* 뒷 배경 구름 */
+#bg_cloud .float {animation-duration: 6s; animation-fill-mode: forwards; animation-timing-function: ease-out; animation-name: Float, FadeIn;}
+#bg_cloud .float2 {animation-duration: 6s; animation-fill-mode: forwards; animation-timing-function: ease-out; animation-name: Float2, FadeIn;}
+#cloud1 {width: 500px; left: -150%; bottom: 30%; z-index: 910;}
+#cloud2 {width: 500px; left: 160%; bottom: 28%; z-index: 930;}
+#cloud3 {width: 260px; left: -35%; bottom: 35%; z-index: 920;}
+#cloud4 {width: 260px; left: 90%; bottom: 31%; z-index: 930;}
+#cloud5 {width: 160px; left: -76%; bottom: 44%; z-index: 910;}
+#cloud6 {width: 140px; left: 142%; bottom: 47%; z-index: 910;}
+#cloud7 {width: 110px; left: -42%; bottom: 55%; z-index: 910;}
+#cloud8 {width: 280px; left: 70%; bottom: 53%; z-index: 930;}
+#cloud9 {width: 250px; left: -10%; bottom: 65%; z-index: 910;}
+#cloud10 {width: 85px; left: 92%; bottom: 75%; z-index: 910;}
+#cloud11 {width: 195px; left: 60%; bottom: 80%; z-index: 910;}
+#cloud12 {width: 110px; left: 20%; bottom: 90%; z-index: 910;}
+
+/* #bg_cloud .float,  #bg_cloud .float2 */
+@keyframes FadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+/* #bg_cloud .float  */
+@keyframes Float {
+    0%  {}
+    50% {transform: translateX(20%) translateZ(0);}
+    100% {transform: translateX(-30%) translateZ(0);}
+}
+
+/* #bg_cloud .float2 */
+@keyframes Float2 {
+    0% {}
+    50% {transform: translateX(-20%) translateZ(0);}
+    100% {transform: translateX(30%) translateZ(0);}
+}
+
+/* -------------------------스킬페이지------------------------- */
+#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F); /* display: none; */}
+#space img#char {width: 600px; left: -290px; bottom: 60px;}
+
+/* 스킬 마법효과 */
+#sk {left: -21px; top: 294px;}
+.fontStyle {font-size: 18px; font-weight: 900; color: #332F2F; letter-spacing: -0.5px; z-index: 900;}
+#spaceNot {width: 300px; left: -145px; top: 150px; z-index: 880;}
+#spaceLight {opacity: 0.5; width: 200px; height: 200px; border-radius: 50%; left: -95px; top: 190px; background: #df7a27c5; filter: blur(30px); animation: light 3s infinite ease-out;}
+#spaceMove {width: 127px; left: -60.6px; top: 239px; animation: spin 4s infinite linear;}
+#spaceMove2 {width: 147px; left: -71px; top: 230px; animation: spin 7s infinite linear;}
+#spaceMove3 {width: 240px; height: 240px; left: -115px; top: 180px; border-radius: 50%; border: 1px solid #c4c29d; animation: spin3D 4s infinite linear;}
+#spaceMove3-2 {width: 240px; height: 240px; left: -115px; top: 180px; border-radius: 50%; border: 1px solid #c4c29d; animation: spin3D_3 4s infinite linear;}
+#spaceMove4 {width: 170px; height: 170px; left: -84px; top: 216px; border-radius: 50%; border: 1px solid #c4c29d; animation: spin3D_2 2s infinite linear;}
+#spaceMove4-2 {width: 170px; height: 170px; left: -84px; top: 216px; border-radius: 50%; border: 1px solid #c4c29d; animation: spin3D_4 2s infinite linear;}
+
+/* #spaceMove, #spaceMove2 */
+@keyframes spin {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+
+/* #spaceLight */
+@keyframes light {
+    0% {opacity: 0.5; transform: scale(0.7deg)}
+    50% {opacity: 0.1; transform: scale(1.2deg)}
+    100% {opacity: 0.5; transform: scale(0.7deg)}
+}
+
+/* #spaceMove3 */
+@keyframes spin3D {
+    0% {transform: rotate3d(.5,.5,.5, 360deg);}
+    100% {transform: rotate3d(0deg);}
+}
+
+/* #spaceMove4 */
+@keyframes spin3D_2 {
+    0% { transform: rotate3d(.3,.3,.3, 360deg);}
+    100% {transform: rotate3d(0deg);}
+}
+
+/* #spaceMove3-2 */
+@keyframes spin3D_3 {
+    0% {transform: rotate3d(0deg);}
+    100% {transform: rotate3d(.5,.5,.5, 360deg);}
+}
+
+/* #spaceMove4-2 */
+@keyframes spin3D_4 {
+    0% {transform: rotate3d(0deg);}
+    100% {transform: rotate3d(.3,.3,.3, 360deg);}
+}
+
+/* 스킬정렬 버튼효과 */
+.wave2 {position: absolute; transform: translateX(-50%); width: 300px; height: 300px; z-index: 905;}
+#wave {top: 150px; left: 0;}
+.wave2 .letter, .wave2 .circl {display: block;}
+.wave2 .letter {position: absolute; top: 30px; left: 6px; line-height: 10px; width: 100%; text-align: center; color: #fbfceb; letter-spacing: 8px; animation: animate 1.3s infinite alternate;}
+
+@keyframes animate {
+    0% {transform: translate(0,0);}
+    100% {transform: translate(0,15px);}
+}
+
+.circl {width: 50%; height: 100px; display: flex; justify-content: center; align-items: center;}
+.circl span {position: absolute; left: 0; right: 0; margin: 0 auto; border-radius: 50%;}
+.circl .cc1 {border: 2px solid #fbfceb; box-shadow: 0px 0px 7px #ffffffd8; cursor: pointer}
+.circl .cc2 {border: 2px solid #fbfceb; box-shadow: 0px 0px 7px #ffffffd8; cursor: pointer}
+.circl .cc3 {border: 2px solid #fbfceb; box-shadow: 0px 0px 7px#ffffffd8; cursor: pointer}
+
+/* top, widht, height, animation */
+.circl .cc1 {top: 0; width: 100%; height: 100%; animation: pulse-me 2s ease-in infinite;}
+
+.circl .cc2 {top: calc(100% / 8); width: calc(100% * 3/4); height: calc(100% * 3/4); animation: pulse-me 2s 0.3s ease-in infinite; opacity: 0;}
+
+.circl .cc3 {top: calc(100% / 4); width: calc(100% * 2/4); height: calc(100% * 2/4); animation: pulse-me 2s 0.6s ease-in infinite; opacity: 0;}
+
+
+/* .circl .cc2, .circl .cc3 */
+@keyframes pulse-me {
+    0% {transform: scale(0.5); opacity: 0;}
+    50% {opacity: 0.5;}
+    70% {opacity: 0.2;}
+    100% { transform: scale(1.6); opacity: 0;}
+}
+  
+/* 스킬정렬 버튼 */
+#skill .other-circle {transform: translateX(0);position: absolute;width: 147px;border-radius: 100%;opacity: 0;transition: 0.6s; /*transition-timing-function: cubic-bezier(0.51, 1.1, 0.3, 1.1);*/transform: translateX(0);}
+#skill .pa {width: 147px; left: -68px; top: 230px; animation: ani 1.5s infinite alternate;}
+
+/* #skill .pa */
+@keyframes ani {
+    0% {transform:translate(0,0) rotate(-4deg);}
+    100% {transform:translate(0,10px) rotate(4deg);}
+}
+
+/* wave 버튼위치 */
+#wavebtn3 {bottom: 305px; left: 208px; transition: 6.5s; opacity: 0;}
+#heart {width: 70px; bottom: 310px; left: 170px; transition: 6.5s; opacity: 0;}
+.op {display: none;}
+.point {cursor: pointer;}
+.ls {letter-spacing: 5px;}
+.wavebtn .txt2, .wavebtn .circle {display: block;}
+.wavebtn .txt2 {position: absolute; top: -10px; left: 5px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
+
+/* -------------------------자기소개 페이지------------------------- */
+#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E); display: none;}
+#poster {width: 800px; top: 240px; left: 40px;}
+#speech {width: 148px; top: 440px; left: -50px; z-index: 780;}
+
+/* wave 버튼위치 */
+#wavebtn4 {top: 374px; right: -40px; z-index: 790;}
+.wid {width: 200px; height: 200px;}
+.wavebtn .txt3, .wavebtn .circle {display: block;}
+.wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff; animation: animate 1.3s infinite alternate;}
+
+#txtbox {width: 550px; top: 240px; right: 240px; border: 1px solid #000;}
+#txtbox li {margin-bottom: 100px; color: #fff;}
+#txtbox li h3 {font-size: 34px; margin-bottom: 12px; border: 1px solid #000;}
+#txtbox li h3::befores {content: ""; position: absolute; top: 0; width: 15px; height: 15px; background: #fff; transform: rotate(45deg); box-shadow: 0px 0px 7px #ffffffb4;}

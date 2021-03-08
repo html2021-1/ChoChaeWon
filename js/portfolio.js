@@ -1,8 +1,16 @@
 $(document).ready(function () {
+    var timer = 0;
     $('.wavebtn').on('click', function () {
         $(this).hide(0, function () {
             console.log($(this).css('display'));
         });
+
+        if ($(this).is('#wavebtn1')) {
+            /* 애니메이션 무한 작동 */
+            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
+        } else {
+            clearTimeout(timer);
+        }
 
         /* 애니메이션 한번 작동 */
         animation(7, '#go img', 'svg/1go/door_', 130)
@@ -14,7 +22,7 @@ $(document).ready(function () {
     });
 
     /* 애니메이션 무한 작동 */
-    animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
+    // animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
 
     /* 애니메이션 한번 작동 */
     function animation(maxNum, tg, src, duration) {
@@ -100,11 +108,21 @@ $(document).ready(function () {
     $('#wavebtn4').click(function () {
         $(this).prev('#speech').fadeOut(800);
     });
-});
 
-/* 다음 화면으로 넘어가기 */
-function transform(tg, duration) {
-    setTimeout(function () {
-        $(tg).stop().fadeOut(700)
-    }, duration);
-}
+    /* 다음 화면으로 넘어가기 */
+    function transform(tg, duration) {
+        setTimeout(function () {
+            $(tg).stop().fadeOut(700)
+        }, duration);
+    }
+
+    // #gnb 홈 a 클릭하는 경우만 깃발 펄럭이는 함수 호출
+    $('#gnb ul li').children().on('click', function (e) {
+        e.preventDefault();
+        if ($(this).parent().index() === 0) {
+            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
+        } else {
+            clearTimeout(timer);
+        }
+    });
+});

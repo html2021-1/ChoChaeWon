@@ -59,10 +59,10 @@ ul, li {list-style: none;}
 /* -------------------------처음페이지------------------------- */
 #castle {display: flex; justify-content: center; align-items: flex-end; z-index: 1000; background: url("../svg/2-2castle/background.svg") no-repeat center; 
     -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; display: none;}
-#castle img#magic {position: relative;width: 565px; z-index: 970;}
+#castle img#magic {position: relative; width: 565px; z-index: 970;}
 
 /* 네비게이션 */
-#nav {position: absolute; top: 8%; left: 4%;  z-index: 990;}
+#nav {position: absolute; top: 8%; left: 4%; z-index: 990;}
 #nav .navbox {display: flex; width: 1000px;}
 #nav .navbox .logo {margin-right: 20px;}
 #nav .navbox .logo img {width: 140px;}
@@ -89,7 +89,7 @@ ul, li {list-style: none;}
 }
 
 /* wave 버튼위치 */
-#wavebtn2 {top: 520px; left: 50.4%;z-index: 970;}
+#wavebtn2 {top: 520px; left: 50.4%; z-index: 970;}
 
 /* 공통 클래스 */
 .bg_rear {display: flex;}
@@ -139,7 +139,7 @@ ul, li {list-style: none;}
 }
 
 /* -------------------------스킬페이지------------------------- */
-#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F); /* display: none; */}
+#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F); display: none;}
 #space img#char {width: 600px; left: -290px; bottom: 60px;}
 
 /* 스킬 마법효과 */
@@ -244,17 +244,18 @@ ul, li {list-style: none;}
 .wavebtn .txt2 {position: absolute; top: -10px; left: 5px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
 
 /* -------------------------자기소개 페이지------------------------- */
-#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E); display: none;}
-#poster {width: 800px; top: 240px; left: 40px;}
-#speech {width: 148px; top: 440px; left: -50px; z-index: 780;}
+#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E);}
+#poster {width: 800px; top: 250px; left: 40px;}
+#speech {width: 148px; top: 450px; left: -50px; z-index: 780;}
 
 /* wave 버튼위치 */
-#wavebtn4 {top: 374px; right: -40px; z-index: 790;}
+#wavebtn4 {top: 384px; right: -40px; z-index: 790;}
 .wid {width: 200px; height: 200px;}
 .wavebtn .txt3, .wavebtn .circle {display: block;}
-.wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff; animation: animate 1.3s infinite alternate;}
+.wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
 
-#txtbox {width: 550px; top: 240px; right: 240px; border: 1px solid #000;}
+/* 글 */
+#txtbox {width: 550px; top: 270px; right: 160px;}
 #txtbox li {margin-bottom: 100px; color: #fff;}
-#txtbox li h3 {font-size: 34px; margin-bottom: 12px; border: 1px solid #000;}
-#txtbox li h3::befores {content: ""; position: absolute; top: 0; width: 15px; height: 15px; background: #fff; transform: rotate(45deg); box-shadow: 0px 0px 7px #ffffffb4;}
+#txtbox li h3 {font-size: 40px; font-weight: 700; margin-bottom: 13px; transition: 1.3s;}
+#txtbox li p {font-size: 15px; line-height: 24px; opacity: 0.7; transition: 1.3s;}

@@ -73,7 +73,7 @@ ul, li {list-style: none;}
 #gnb ul li {position: relative;}
 #gnb ul li::after {content: ""; position: absolute; top: 43%; right: 0; width: 6px; height: 6px; background: #fff; transform: rotate(45deg); opacity: 0.7;}
 #gnb ul li:nth-child(2) {padding: 0 7px;}
-#gnb ul li:nth-child(4) {padding: 0 15px;}
+#gnb ul li:nth-child(4) {padding: 0 20px;}
 #gnb ul li:not(.dpchange)::after {display: none;}
 
 /* 로고와 소개글 */
@@ -139,7 +139,7 @@ ul, li {list-style: none;}
 }
 
 /* -------------------------스킬페이지------------------------- */
-#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F); display: none;}
+#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F); /* display: none; */}
 #space img#char {width: 600px; left: -290px; bottom: 60px;}
 
 /* 스킬 마법효과 */
@@ -243,8 +243,12 @@ ul, li {list-style: none;}
 .wavebtn .txt2, .wavebtn .circle {display: block;}
 .wavebtn .txt2 {position: absolute; top: -10px; left: 5px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
 
+/* fade in effect 공통 스타일 정리 */
+.fade .effect{opacity: 0;transform: translateY(100px);transition: all 0.5s ease-out;}
+.fade.in .effect{opacity: 1;transform: translateY(0);}
+
 /* -------------------------자기소개 페이지------------------------- */
-#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E);}
+#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E); /* display: none; */}
 #poster {width: 800px; top: 250px; left: 40px;}
 #speech {width: 148px; top: 450px; left: -50px; z-index: 780;}
 
@@ -252,10 +256,116 @@ ul, li {list-style: none;}
 #wavebtn4 {top: 384px; right: -40px; z-index: 790;}
 .wid {width: 200px; height: 200px;}
 .wavebtn .txt3, .wavebtn .circle {display: block;}
-.wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
+.wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff; animation: animate 1.3s infinite alternate;}
 
 /* 글 */
 #txtbox {width: 550px; top: 270px; right: 160px;}
 #txtbox li {margin-bottom: 100px; color: #fff;}
 #txtbox li h3 {font-size: 40px; font-weight: 700; margin-bottom: 13px; transition: 1.3s;}
 #txtbox li p {font-size: 15px; line-height: 24px; opacity: 0.7; transition: 1.3s;}
+
+/* -------------------------작업물 메인페이지------------------------- */
+#main {display: flex; justify-content: left; z-index: 700; background: #000; /* display: none; */}
+#window {width: 400px; left: 320px; bottom: 0;}
+#shelf {width: 700px; left: 170px; bottom: 0;}
+#acter5 {width: 390px; left: 320px; bottom: 0;}
+
+/* wave 버튼위치 */
+#wavebtn5 {top: 212px; left: 460px;}
+
+/* 글 */
+#txtbox2 {position: relative; color: #fff; text-align: right; width: 570px; margin: 350px 1170px;}
+#txtbox2 li span {display: block; font-size: 24px; margin-bottom: 10px;}
+#txtbox2 li h2 {font-size: 60px; font-weight: 700; margin-bottom: 30px;}
+#txtbox2 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
+#txtbox2 li .font {display: flex; justify-content: space-between;}
+#txtbox2 li .after {float: left; width: 130px; text-align: center; height: 60px; font-size: 14px;}
+
+/* 모달 버튼 위치 */
+.mdopen_btn {width: 20px; height: 20px; background: #fff; cursor: pointer; transform: rotate(45deg); box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.746);}
+#txtbox2 #btn1 {top: 295px; left: 47px;}
+#txtbox2 #btn2 {top: 295px; left: 161px;}
+#txtbox2 #btn3 {top: 295px; left: 275px;}
+#txtbox2 #btn4 {top: 295px; left: 389px;}
+#txtbox2 #btn5 {top: 295px; left: 503px;}
+
+/* 열려질 상세 모달 */
+#dim, .md_cnt {position: fixed; z-index: 700;}
+#dim {display: none; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
+.md_cnt {width: 1400px; height: 750px; visibility: hidden; background: #fff; padding: 50px;}
+.md_cnt .mdclose_btn {position: absolute; right: 15px; top: 15px; width: 70px; height: 70px; cursor: pointer;}
+.md_cnt .mdclose_btn .border_1 {position: absolute; top: 0; width: 2px; height: 70px; transform: rotate(45deg); background: #000;}
+.md_cnt .mdclose_btn .border_2 {position: absolute; top: 0; width: 2px; height: 70px; transform: rotate(-45deg); background: #000;}
+
+/* -------------------------작업물 상세페이지------------------------- */
+#detail {display: flex; justify-content: center; z-index: 600; background: linear-gradient(-90deg,#141E21, #2F3D35); /* display: none; */}
+#bottle {width: 800px; top: 230px; left: -150px;}
+#wavebtn6 {top: 550px; right: -278px;}
+
+/* 글 */
+#txtbox3 {position: relative; color: #fff; text-align: left; width: 570px; margin: 350px 0 0 -900px;}
+#txtbox3 li span {display: block; font-size: 24px; margin-bottom: 10px;}
+#txtbox3 li h2 {font-size: 60px; font-weight: 700; margin-bottom: 30px;}
+#txtbox3 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
+#txtbox3 li .after {position: absolute; width: 130px; text-align: center; height: 60px; font-size: 14px;}
+#txtbox3 li .p_2 {left: -48px;}
+#txtbox3 li .p_3 {left: 67px;}
+#txtbox3 li .p_4 {left: 180px;}
+#txtbox3 li .p_5 {left: 295px;}
+
+/* 모달 버튼 위치 */
+#txtbox3 #btn1-2 {top: 295px; left: 7px;}
+#txtbox3 #btn2-2 {top: 295px; left: 121px;}
+#txtbox3 #btn3-2 {top: 295px; left: 235px;}
+#txtbox3 #btn4-2 {top: 295px; left: 349px;}
+
+/* -------------------------제품광고포스터 페이지------------------------- */
+#product {display: flex; justify-content: center; z-index: 500; background: linear-gradient(130deg,#775172,#FCB16E,#FCB16E);}
+#start {position: relative; width: 1300px; top: -20px; left: 530px; z-index: 480;}
+#arrive {width: 880px; left: -100px; bottom: -5px; z-index: 490;}
+#acter7 {width: 72px; left: 748px; top: 267px; z-index: 490; animation: animate2 1.3s infinite alternate;}
+#shine {width: 104px; left: 194px; bottom: 226px; z-index: 495}
+
+.moveArrive {animation: arrive 3s alternate ease-out;}
+
+@keyframes animate2 {
+    0% {transform: translate(0,-6px);}
+    100% {transform: translate(0,6px);}
+}
+
+@keyframes arrive {
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-538px,340px);}
+}
+
+/* wave 버튼위치 */
+.wavebtn .tx, .wavebtn .circle {display: block;}
+.wavebtn .tx {position: absolute; top: 36px; left: 60px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
+#wavebtn7 {top: 310px; left: 778px; z-index: 500;}
+
+/* 뒤에 산배경 */
+#bg {top: 120px; left: -130px;}
+#bg #big_mt {top: 0; left: 0; width: 2250px; z-index: 440;}
+#bg #small_mt1 {top: 300px; left: 70px; width: 560px; z-index: 470;}
+#bg #small_mt2 {top: 300px; left: 180px; width: 60px; z-index: 460;}
+#bg #small_mt3 {top: 243px; left: 260px; width: 270px; z-index: 450;}
+
+#bg_cloud7 {}
+#bg_cloud7 #bg_cloud7_1 {width: 160px; top: 300px; left: 23px; z-index: 460;}
+
+/* 글 */
+#txtbox4 {position: relative; color: #fff; text-align: right; width: 570px; margin: 520px 0 0 -200px; z-index: 500;}
+#txtbox4 li span {display: block; font-size: 24px; margin-bottom: 10px;}
+#txtbox4 li h2 {font-size: 60px; font-weight: 700; margin-bottom: 30px;}
+#txtbox4 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
+#txtbox4 li .after {position: absolute; width: 130px; text-align: center; height: 60px; font-size: 14px;}
+#txtbox4 li .p_2 {right: -48px;}
+#txtbox4 li .p_3 {right: 67px;}
+#txtbox4 li .p_4 {right: 180px;}
+#txtbox4 li .p_5 {right: 295px;}
+
+/* 모달 버튼 위치 */
+#txtbox4 #btn1-2 {top: 295px; right: 7px;}
+#txtbox4 #btn2-2 {top: 295px; right: 121px;}
+#txtbox4 #btn3-2 {top: 295px; right: 235px;}
+#txtbox4 #btn4-2 {top: 295px; right: 349px;}

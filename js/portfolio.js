@@ -6,8 +6,8 @@ $(document).ready(function () {
         });
 
         /* 애니메이션 무한 작동 */
-        /* if ($(this).is('#wavebtn1')) {
-            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
+        if ($(this).is('#wavebtn1')) {
+            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/MagicCastle_', 145)
         } else {
             clearTimeout(timer);
         }
@@ -23,16 +23,39 @@ $(document).ready(function () {
         }
         else if ($(this).is('#wavebtn4')) {
             animation(9, '#self #poster', 'svg/4self/poster_', 150);
+            $('#main .area').addClass('in');
+            transitionDelay();
         }
-        else if ($(this).is('#wavebtn5')) animation(11, '#main #window', 'svg/5mainpage/window_', 130);
+        else if ($(this).is('#wavebtn5')) {
+            animation(13, '#main #window', 'svg/5mainpage/window_', 135);
+            $('#detail .area').addClass('in');
+            transitionDelay();
+        }
+        else if ($(this).is('#wavebtn6')) {
+            $('#product .area').addClass('in');
+            transitionDelay();
+        }
+        else if ($(this).is('#wavebtn7')) {
+            $('#acter7').addClass('move');
+            setTimeout(function () {
+                $('#event .area').addClass('in');
+                transitionDelay();
+            }, 2000);
+        }
+        else if ($(this).is('#wavebtn8')) {
+            animation(11, '#event #pump', 'svg/8event/pumpkin_', 130);
+            $('#goal .area').addClass('in');
+            transitionDelay();
+        }
+        else if ($(this).is('#wavebtn9')) {
+            $('#end .area').addClass('in');
+            transitionDelay();
+        }
 
         /* 다음 화면으로 넘어가기 */
         var tgId = $(this).closest('.scene').attr('id');
         transform('#' + tgId, 1400);
     });
-
-    /* 애니메이션 무한 작동 */
-    // animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
 
     /* 애니메이션 한번 작동 */
     function animation(maxNum, tg, src, duration) {
@@ -72,7 +95,7 @@ $(document).ready(function () {
     function transitionDelay() {
         $('.fade.in .effect').each(function () {
             var orderNum = $(this).data('order');
-            var delay = (orderNum * 0.5) + 3;
+            var delay = (orderNum * 0.6) + 3;
             $(this).css('transitionDelay', delay + 's');
         });
     }
@@ -145,6 +168,11 @@ $(document).ready(function () {
         }s
     });
 
+    /* 제품광고페이지 버튼이벤트 */
+    $('#wavebtn7').click(function () {
+        $('#acter7').css();
+    });
+
     /* 모달 */
     $('.mdopen_btn').on('click', function () {
         // 1) 변수 선언
@@ -179,38 +207,7 @@ $(document).ready(function () {
         _mdCnt.before('<div id="dim"></div>');
         var _dim = $('#dim');
 
-        // 5) resize 이벤트로 모달창의 위치 제어 - 높이값만 제어 중
-        $(window).on('resize', function () {
-            clearTimeout(timerResize);
-
-            timerResize = setTimeout(function () {
-                var winHei = $(this).height();
-                var winWid = $(this).width();
-                var modalHei = _mdCnt.outerHeight();
-                var modalWid = _mdCnt.outerWidth();
-                var x; // 모달창의 x좌표값
-                var y; // 모달창의 y좌표값
-                //console.log(winHei, winWid, modalHei, modalWid);
-                if (winHei >= modalHei) { // 모달 크기가 작은 경우 : center 위치
-                    x = (winWid - modalWid) / 2;
-                    y = (winHei - modalHei) / 2;
-                    console.log(x, y)
-                    _mdCnt.css({
-                        left: x,
-                        top: y
-                    });
-                } else { // 모달 크기가 큰 경우 : top0 , overflow-y:auto
-                    x = (winWid - modalWid) / 2;
-                    console.log(x);
-                    _mdCnt.css({
-                        left: x,
-                        top: 0,
-                        overflowY: 'auto'
-                    });
-                }
-            }, 50);
-        });
-        $(window).trigger('resize');
+        // 5) resize 이벤트로 모달창의 위치 제어 - 동일한 사이즈로 스타일에서 처리
 
         // 6) 위치 제어가 끝나면 #dim,  상세 모달을 보여지게 처리 -> .first에 포커스 강제 이동
         _dim.stop().fadeIn().next().css('visibility', 'visible');

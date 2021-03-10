@@ -6,9 +6,14 @@
     <title> portfolio </title>
     <!-- 폰트 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+    <link rel="stylesheet" type="text/css" href="css/mixionCss.css">
 
+    <!-- jq -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/portfolio.js"></script>
 </head>
@@ -34,7 +39,7 @@
     <!-- 처음페이지 -->
     <div id="castle" class="scene">
         <!-- 네비게이션 -->
-        <div id="nav">
+        <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -101,7 +106,7 @@
     <!-- 스킬페이지 -->
     <div id="space" class="scene">
         <!-- 네비게이션 -->
-        <div id="nav">
+        <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -184,7 +189,7 @@
     <!-- 자기소개 페이지 -->
     <div id="self" class="scene">
          <!-- 네비게이션 -->
-         <div id="nav">
+         <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -217,18 +222,18 @@
                 </span>
             </button>
 
-            <ul id="txtbox" class="ads effect" data-order="2">
-                <li>
+            <ul id="txtbox" class="ads">
+                <li class="effect" data-order="2">
                     <h3>Design Trend</h3>
                     <p> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
                 </li>
 
-                <li>
+                <li class="effect" data-order="3">
                     <h3>Design Trend</h3>
                     <p> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
                 </li>
 
-                <li>
+                <li class="effect" data-order="4">
                     <h3>Design Trend</h3>
                     <p> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
                 </li>
@@ -239,7 +244,7 @@
     <!-- 작업물 메인페이지 -->
     <div id="main" class="scene">
         <!-- 네비게이션 -->
-        <div id="nav">
+        <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -257,12 +262,12 @@
             </div>
         </div>
 
-        <div class="area">
-            <img id="window" class="ads" src="svg/5mainpage/window_1.svg" alt="">
-            <img id="shelf" class="ads" src="svg/5mainpage/bookshelf.svg" alt="">
-            <img id="acter5" class="ads" src="svg/5mainpage/character5.svg" alt="">
+        <div class="area fade">
+            <img id="window" class="ads effect" data-order="0" src="svg/5mainpage/window_1.svg" alt="">
+            <img id="shelf" class="ads effect" data-order="1" src="svg/5mainpage/bookshelf.svg" alt="">
+            <img id="acter5" class="ads effect" data-order="2" src="svg/5mainpage/character5.svg" alt="">
             <!-- 다음으로 넘어가는 버튼 -->
-            <button type="button" id="wavebtn5" class="wavebtn">
+            <button type="button" id="wavebtn5" class="wavebtn effect" data-order="0">
                 <span class="txt3 ls">click!</span>
                 <span class="circle wid">
                     <span class="c1 point"></span>
@@ -272,9 +277,9 @@
                 </span>
             </button>
 
-            <ul id="txtbox2">
+            <ul id="txtbox2" class="effect" data-order="3">
                 <li>
-                    <span>portfolio</span>
+                    <span>Portfolio</span>
                     <h2>메인페이지 리디자인</h2>
                     <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
                 </li>
@@ -294,48 +299,13 @@
                     <button id="btn5" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal5"></button>
                 </li>
             </ul>
-    
-        <div id="modal1" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-                <button class="mdclose_btn last" type="button">
-                    <span class="border_1"></span>
-                    <span class="border_2"></span>
-                </button>
-            </div>
-
-            <div id="modal2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-                <button class="mdclose_btn last" type="button">
-                    <span class="border_1"></span>
-                    <span class="border_2"></span>
-                </button>
-            </div>
-
-            <div id="modal3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-                <button class="mdclose_btn last" type="button">
-                    <span class="border_1"></span>
-                    <span class="border_2"></span>
-                </button>
-            </div>
-
-            <div id="modal4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-                <button class="mdclose_btn last" type="button">
-                    <span class="border_1"></span>
-                    <span class="border_2"></span>
-                </button>
-            </div>
-
-            <div id="modal5" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-                <button class="mdclose_btn last" type="button">
-                    <span class="border_1"></span>
-                    <span class="border_2"></span>
-                </button>
-            </div>
-        </div>
+        </div>    
     </div>
 
     <!-- 작업물 상세페이지 -->
     <div id="detail" class="scene">
         <!-- 네비게이션 -->
-        <div id="nav">
+        <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -353,10 +323,10 @@
             </div>
         </div>
 
-        <div class="area">
-            <img id="bottle" class="ads" src="svg/6detailpage/bottle_1.svg" alt="">
-            <button type="button" id="wavebtn6" class="wavebtn">
-                <span class="txt">click!</span>
+        <div class="area fade">
+            <img id="bottle" class="ads effect" data-order="0" src="svg/6detailpage/bottle_1.svg" alt="">
+            <button type="button" id="wavebtn6" class="wavebtn effect" data-order="0">
+                <span class="txt ls">click!</span>
                 <span class="circle">
                     <span class="c1"></span><!-- 크기100%, 배경색 옅은색, 파동 -->
                     <span class="c2"></span><!-- 크기2/3-66.6666666%, 파동 -->
@@ -364,62 +334,34 @@
                     <span class="c4"></span><!-- 크기100% / 2.3%, 고정(애니메이션 없음) 블러효과 -->
                 </span>
             </button>
-        </div>
+            
+            <ul class="txtbox3 effect" data-order="1">
+                <li>
+                    <span>Portfolio</span>
+                    <h2>상세페이지 디자인</h2>
+                    <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
+                </li>
 
-        <ul id="txtbox3">
-            <li>
-                <span>portfolio</span>
-                <h2>상세페이지 디자인</h2>
-                <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
-            </li>
-
-            <li>
-                <div class="font">
-                    <p class="p_2 after">ZARA</p>
-                    <p class="p_3 after">두끼</p>
-                    <p class="p_4 after">한국전력공사</p>
-                    <p class="p_5 after">IBM</p>
-                </div>
-                <button id="btn1-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal1-2"></button>
-                <button id="btn2-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal2-2"></button>
-                <button id="btn3-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal3-2"></button>
-                <button id="btn4-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal4-2"></button>
-            </li>
-        </ul>
-
-        <div id="modal1-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
-        </div>
-
-        <div id="modal2-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
-        </div>
-
-        <div id="modal3-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
-        </div>
-
-        <div id="modal4-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
+                <li>
+                    <div class="font">
+                        <p class="p_2 after">ZARA</p>
+                        <p class="p_3 after">이니스프리</p>
+                        <p class="p_4 after">바튼소파</p>
+                        <p class="p_5 after">Freebuds X9</p>
+                    </div>
+                    <button id="btn1-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal1-2"></button>
+                    <button id="btn2-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal2-2"></button>
+                    <button id="btn3-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal3-2"></button>
+                    <button id="btn4-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal4-2"></button>
+                </li>
+            </ul>
         </div>
     </div>
 
     <!-- 작업물 제품광고포스터 페이지 -->
     <div id="product" class="scene">
         <!-- 네비게이션 -->
-        <div id="nav">
+        <div class="nav">
             <div class="navbox">
                 <div class="logo">
                     <img src="svg/2-2castle/logo_white.svg" alt="로고">
@@ -437,92 +379,336 @@
             </div>
         </div>
 
-        <div class="area">
-            <img id="start" src="svg/7product/start.svg" alt="">
-            <img id="arrive" class="ads" src="svg/7product/arrive.svg" alt="">
-            <img id="acter7" class="ads" src="svg/7product/character7.svg" alt="">
-            <img id="shine" class="ads" src="svg/7product/shine.svg" alt="">
+        <div class="area fade">
+            <img id="start" class="effect" data-order="2" src="svg/7product/start.svg" alt="">
+            <img id="arrive" class="ads effect" data-order="3" src="svg/7product/arrive.svg" alt="">
+            <img id="acter7" class="ads effect" data-order="4" src="svg/7product/character7.svg" alt="">
+            <img id="shine" class="ads effect" data-order="4" src="svg/7product/shine.svg" alt="">
             <!-- 다음으로 넘어가는 버튼 -->
-            <button type="button" id="wavebtn7" class="wavebtn">
+            <button type="button" id="wavebtn7" class="wavebtn effect" data-order="4">
                 <span class="tx ls">click!</span>
                 <span class="circle">
-                    <span class="c1"></span><!-- 크기100%, 배경색 옅은색, 파동 -->
-                    <span class="c2"></span><!-- 크기2/3-66.6666666%, 파동 -->
-                    <span class="c3"></span><!-- 크기100% / 2.3%, 고정(애니메이션 없음) -->
-                    <span class="c4"></span><!-- 크기100% / 2.3%, 고정(애니메이션 없음) 블러효과 -->
+                    <span class="c1"></span>
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <span class="c4"></span>
                 </span>
             </button>
 
             <ul id="bg" class="ads">
-               <li><img id="big_mt" class="ads" src="svg/7product/mountainBig.svg" alt=""></li> 
-                <li>
+                <li class="effect" data-order="0"><img id="big_mt" class="ads" src="svg/7product/mountainBig.svg" alt=""></li> 
+                <li class="effect" data-order="1">
                     <img id="small_mt1" class="ads" src="svg/7product/mountainSmall_1.svg" alt="">
                     <img id="small_mt2" class="ads" src="svg/7product/mountainSmall_2.svg" alt="">
                     <img id="small_mt3" class="ads" src="svg/7product/mountainSmall_3.svg" alt="">
                 </li>
+
+                <li id="bg_clou" class="ads effect" data-order="1">
+                    <img id="clou1" class="ads" src="svg/7product/clond7_1.svg" alt="">
+                    <img id="clou2" class="ads" src="svg/7product/clond7_2.svg" alt="">
+                    <img id="clou3" class="ads" src="svg/7product/clond7_3.svg" alt="">
+                    <img id="clou4" class="ads" src="svg/7product/clond7_4.svg" alt="">
+                    <img id="clou5" class="ads" src="svg/7product/clond7_5.svg" alt="">
+                    <img id="clou6" class="ads" src="svg/7product/clond7_6.svg" alt="">
+                    <img id="clou7" class="ads" src="svg/7product/clond7_7.svg" alt="">
+                </li>
             </ul>
 
-            <div id="bg_cloud7" class="ads">
-                <img id="cloud7_1" class="ads" src="svg/7product/clond7_1.svg" alt="">
-                <img id="cloud7_2" class="ads" src="svg/7product/clond7_2.svg" alt="">
-                <img id="cloud7_3" class="ads" src="svg/7product/clond7_3.svg" alt="">
-                <img id="cloud7_4" class="ads" src="svg/7product/clond7_4.svg" alt="">
-                <img id="cloud7_5" class="ads" src="svg/7product/clond7_5.svg" alt="">
-                <img id="cloud7_6" class="ads" src="svg/7product/clond7_6.svg" alt="">
-                <img id="cloud7_7" class="ads" src="svg/7product/clond7_7.svg" alt="">
+            <ul id="txtbox4" class="ads effect" data-order="5">
+                <li>
+                    <span>Portfolio</span>
+                    <h2>제품광고포스터 디자인</h2>
+                    <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
+                </li>
+    
+                <li>
+                    <div class="font">
+                        <p class="p_2 after">나이키</p>
+                        <p class="p_3 after">샤넬</p>
+                        <p class="p_4 after">던킨도너츠</p>
+                        <p class="p_5 after">스타벅스</p>
+                    </div>
+                    <button id="btn1-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal1-3"></button>
+                    <button id="btn2-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal2-3"></button>
+                    <button id="btn3-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal3-3"></button>
+                    <button id="btn4-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal4-3"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 작업물 이벤트 페이지 -->
+    <div id="event" class="scene">
+        <!-- 네비게이션 -->
+        <div class="nav">
+            <div class="navbox">
+                <div class="logo">
+                    <img src="svg/2-2castle/logo_white.svg" alt="로고">
+                </div>
+                
+                <nav id="gnb">
+                    <ul>
+                        <li class="dpchange"><a href="">Home</a></li>
+                        <li class="dpchange"><a href="">About</a></li>
+                        <li class="dpchange"><a href="">Skill</a></li>
+                        <li class="dpchange"><a href="">Portpoilo</a></li>
+                        <li><a href="">Goal</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
 
-        <ul id="txtbox4">
-            <li>
-                <span>portfolio</span>
-                <h2>제품광고포스터 디자인</h2>
-                <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
-            </li>
+        <div class="area fade">
+            <img id="pump" class="ads effect" data-order="0" src="svg/8event/pumpkin_1.svg" alt="">
+            <img id="acter8" class="ads effect" data-order="2" src="svg/8event/character8.svg" alt="">
+            <img id="shine8" class="ads effect" data-order="1" src="svg/8event/shine9.svg" alt="">
+            <img id="magicEffect" class="ads" src="svg/8event/magicEffect.svg" alt="">
+            <button type="button" id="wavebtn8" class="wavebtn effect" data-order="2">
+                <span class="txt">click!</span>
+                <span class="circle">
+                    <span class="c1"></span>
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <span class="c4"></span>
+                </span>
+            </button>
 
-            <li>
-                <div class="font">
-                    <p class="p_2 after">ZARA</p>
-                    <p class="p_3 after">두끼</p>
-                    <p class="p_4 after">한국전력공사</p>
-                    <p class="p_5 after">IBM</p>
+            <ul class="txtbox3 effect" data-order="3">
+                <li>
+                    <span>Portfolio</span>
+                    <h2>이벤트페이지 디자인</h2>
+                    <p class="p_1"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여<br> 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.</p>
+                </li>
+
+                <li>
+                    <div class="font">
+                        <p class="p_2 after">ZARA</p>
+                        <p class="p_3 after">두끼</p>
+                        <p class="p_4 after">한국전력공사</p>
+                       <p class="p_5 after">IBM</p>
+                    </div>
+                    <button id="btn1-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal1-4"></button>
+                    <button id="btn2-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal2-4"></button>
+                    <button id="btn3-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal3-4"></button>
+                    <button id="btn4-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal4-4"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 목표 및 포부 -->
+    <div id="goal" class="scene">
+        <!-- 네비게이션 -->
+        <div class="nav">
+            <div class="navbox">
+                <div class="logo">
+                    <img src="svg/2-2castle/logo_white.svg" alt="로고">
                 </div>
-                <button id="btn1-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal1-3"></button>
-                <button id="btn2-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal2-3"></button>
-                <button id="btn3-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal3-3"></button>
-                <button id="btn4-2" class="mdopen_btn ads" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modal4-3"></button>
-            </li>
-        </ul>
-
-        <div id="modal1-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
+                
+                <nav id="gnb">
+                    <ul>
+                        <li class="dpchange"><a href="">Home</a></li>
+                        <li class="dpchange"><a href="">About</a></li>
+                        <li class="dpchange"><a href="">Skill</a></li>
+                        <li class="dpchange"><a href="">Portpoilo</a></li>
+                        <li><a href="">Goal</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
-        <div id="modal2-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
+        <div class="area fade">
+            <!-- <img id="stage" class="ads" src="svg/9goal/" alt=""> -->
+            <img id="stage" class="ads effect" data-order="1" src="svg/9goal/stage.svg" alt="">
+            <img id="curtain" class="ads effect" data-order="0" src="svg/9goal/curtain.svg" alt="">
+            <!-- 다음으로 넘어가는 버튼 -->
+            <button type="button" id="wavebtn9" class="wavebtn effect" data-order="2">
+                <span class="txt ls">click!</span>
+                <span class="circle">
+                    <span class="c1"></span>
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <span class="c4"></span>
+                </span>
             </button>
-        </div>
 
-        <div id="modal3-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
-        </div>
-
-        <div id="modal4-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
-            <button class="mdclose_btn last" type="button">
-                <span class="border_1"></span>
-                <span class="border_2"></span>
-            </button>
+            <ul id="txtbox5" class="effect" data-order="3">
+                <li>
+                    <span>Goal</span>
+                    <h2>앞으로의 목표와 포부</h2>
+                    <p class="p_2"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.
+                        매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여 사람들에게 
+                    </p>
+                    <p class="p_2"> 매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여 사람들에게 새로운 감동과 신선함을 주기위해 노력하고 있습니다.
+                        매해 변화하는 디자인 트렌드를 꼼꼼히 조사하고 분석하여 사람들에게 
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
+
+    <!-- 마지막페이지 -->
+    <div id="end" class="scene">
+        <!-- 네비게이션 -->
+        <div class="nav">
+            <div class="navbox">
+                <div class="logo">
+                    <img src="svg/2-2castle/logo_white.svg" alt="로고">
+                </div>
+                
+                <nav id="gnb">
+                    <ul>
+                        <li class="dpchange"><a href="">Home</a></li>
+                        <li class="dpchange"><a href="">About</a></li>
+                        <li class="dpchange"><a href="">Skill</a></li>
+                        <li class="dpchange"><a href="">Portpoilo</a></li>
+                        <li><a href="">Goal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="area fade">
+            <div id="group2">
+                <h4 class="ads effect" data-order="4">THANK YOU</h4>
+                <img id="acter10" class="ads effect" data-order="0" src="svg/10end/charater10.svg" alt="">
+                <img id="flower" class="ads effect" data-order="1" src="svg/10end/flower.svg" alt="">
+                <img id="shine10-1" class="ads effect" data-order="2" src="svg/10end/shine10-1.svg" alt="">
+                <img id="shine10-2" class="ads effect" data-order="3" src="svg/10end/shine10-2.svg" alt="">
+            </div>
+
+            <div class="pyro effect" data-order="5">
+                <div class="before"></div>
+                <div class="after"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- 모달 상세내용 -->
+
+    <!-- 작업물 메인페이지 -->
+    <div id="modal1" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal5" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <!-- 작업물 상세페이지 -->
+    <div id="modal1-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal2-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal3-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal4-2" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <!-- 작업물 제품광고포스터 페이지 -->
+    <div id="modal1-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal2-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal3-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal4-3" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <!-- 작업물 이벤트 페이지 -->
+    <div id="modal1-4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal2-4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal3-4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+
+    <div id="modal4-4" class="md_cnt" role="dialog" aria-modal="true" aria-labelledby="tit1">
+        <button class="mdclose_btn last" type="button">
+            <span class="border_1"></span>
+            <span class="border_2"></span>
+        </button>
+    </div>
+</div>
 </body>
 
 </html>

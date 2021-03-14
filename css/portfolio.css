@@ -9,11 +9,12 @@ a:link, a:visited, a:hover, a:active {text-decoration: none;}
 ul, li {list-style: none;}
 
 /* 공통 클래스 */
-.scene {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; font-family: 'NanumSquare', sans-serif;}
+.scene {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; font-family: 'NanumSquare', sans-serif; visibility: hidden; opacity: 0;}
 .area {position: relative;}
+.z-up{z-index: 1500 !important;}
 
 /* -------------------------로딩페이지------------------------- */
-#go {display: flex; justify-content: center; align-items: center; background: #F6E7A9; z-index: 1100; /* display: none; */}
+#go {display: flex; justify-content: center; align-items: center; background: #F6E7A9; z-index: 1100;}
 #go img {width: 696px;}
        
 /* wave 버튼효과 */
@@ -59,7 +60,7 @@ ul, li {list-style: none;}
 
 /* -------------------------처음페이지------------------------- */
 #castle {display: flex; justify-content: center; align-items: flex-end; z-index: 1000; background: url("../svg/2-2castle/background.svg") no-repeat center; 
-    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; /* display: none; */}
+    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover;}
 #castle img#magic {position: relative; width: 565px; z-index: 970;}
 
 /* 네비게이션 */
@@ -67,18 +68,19 @@ ul, li {list-style: none;}
 .nav .navbox {display: flex; width: 1000px;}
 .nav .navbox .logo {margin-right: 20px;}
 .nav .navbox .logo img {width: 140px;}
-#gnb {width: 600px; height: 70px;}
-#gnb ul {display: flex;}
-#gnb ul li a {display: block; width: 100px; height: 65px; text-align: center; line-height: 65px; font-size: 18px; color: #fff;}
+.gnb {width: 600px; height: 70px;}
+.gnb ul {display: flex;}
+.gnb ul li a {display: block; width: 100px; height: 65px; text-align: center; line-height: 65px; font-size: 18px; color: #fff;}
 /* 가상선택자 도형 */
-#gnb ul li {position: relative;}
-#gnb ul li::after {content: ""; position: absolute; top: 43%; right: 0; width: 6px; height: 6px; background: #fff; transform: rotate(45deg); opacity: 0.7;}
-#gnb ul li:nth-child(2) {padding: 0 7px;}
-#gnb ul li:nth-child(4) {padding: 0 20px;}
-#gnb ul li:not(.dpchange)::after {display: none;}
+.gnb ul li {position: relative;}
+.gnb ul li::after {content: ""; position: absolute; top: 43%; right: 0; width: 6px; height: 6px; background: #fff; transform: rotate(45deg); opacity: 0.7;}
+.gnb ul li:nth-child(2) {padding: 0 7px;}
+.gnb ul li:nth-child(4) {padding: 0 20px;}
+.gnb ul li:not(.dpchange)::after {display: none;}
 
 /* 로고와 소개글 */
-#cosmic {width: 1000px; top: 100px; left: -217px; z-index: 980; animation: scale1 6s alternate ease-out;}
+#cosmic {width: 1000px; top: 100px; left: -217px; z-index: 980; }
+#cosmic.on{animation: scale1 6s alternate ease-out;}
 #cosmic img {width: 200px; margin: 22px 40%;}
 #cosmic p {font-size: 17px; line-height: 24px; text-align: center; color: #fff; text-shadow: 0px 0px 5px #0e0b07;}
 
@@ -140,7 +142,7 @@ ul, li {list-style: none;}
 }
 
 /* -------------------------스킬페이지------------------------- */
-#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F);/*  display: none; */}
+#space {display: flex; justify-content: center; z-index: 900; background: linear-gradient(#131714, #412F2F);}
 #space img#char {width: 600px; left: -290px; bottom: 60px;}
 
 /* 스킬 마법효과 */
@@ -236,7 +238,7 @@ ul, li {list-style: none;}
 }
 
 /* wave 버튼위치 */
-#wavebtn3 {bottom: 305px; left: 208px; transition: 6.5s; opacity: 0;}
+#wavebtn3 {bottom: 305px; left: 206px; transition: 6.5s; opacity: 0;}
 #heart {width: 70px; bottom: 310px; left: 170px; transition: 6.5s; opacity: 0;}
 .op {display: none;}
 .point {cursor: pointer;}
@@ -245,11 +247,11 @@ ul, li {list-style: none;}
 .wavebtn .txt2 {position: absolute; top: -10px; left: 5px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
 
 /* fade in effect 공통 스타일 정리 */
-.fade .effect{opacity: 0; transform: translateY(100px); transition: all 0.5s ease-out;}
-.fade.in .effect{opacity: 1; transform: translateY(0);}
+.fade .effect {opacity: 0; transform: translateY(100px); transition: all 0.5s ease-out;}
+.fade.in .effect {opacity: 1; transform: translateY(0);}
 
 /* -------------------------자기소개 페이지------------------------- */
-#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E);/*  display: none; */}
+#self {display: flex; justify-content: center; z-index: 800; background: linear-gradient(#2F4040, #595F4E);}
 #poster {width: 800px; top: 250px; left: 40px;}
 #speech {width: 148px; top: 450px; left: -50px; z-index: 780;}
 
@@ -260,22 +262,22 @@ ul, li {list-style: none;}
 .wavebtn .txt3 {position: absolute; top: -10px; left: 64px; line-height: 10px; width: 100%; text-align: center; color: #fff; animation: animate 1.3s infinite alternate;}
 
 /* 글 */
-#txtbox {width: 550px; top: 270px; right: 160px;}
+#txtbox {width: 550px; top: 250px; right: 160px;}
 #txtbox li {margin-bottom: 100px; color: #fff;}
 #txtbox li h3 {font-size: 40px; font-weight: 700; margin-bottom: 13px; transition: 1.3s;}
 #txtbox li p {font-size: 15px; line-height: 24px; opacity: 0.7; transition: 1.3s;}
 
 /* -------------------------작업물 메인페이지------------------------- */
-#main {display: flex; justify-content: left; z-index: 700; background: #000; /* display: none; */}
+#main {display: flex; justify-content: left; z-index: 700; background: #000;}
 #window {width: 400px; left: 320px; bottom: 0;}
 #shelf {width: 700px; left: 170px; bottom: 0;}
 #acter5 {width: 390px; left: 320px; bottom: 0;}
 
 /* wave 버튼위치 */
-#wavebtn5 {top: 212px; left: 420px;}
+#wavebtn5 {top: 180px; left: 420px; z-index: 700;}
 
 /* 글 */
-#txtbox2 {position: relative; color: #fff; text-align: right; width: 570px; top: 370px; left: 1130px;}
+#txtbox2 {position: relative; color: #fff; text-align: right; width: 570px; top: 350px; left: 1130px;}
 #txtbox2 li span {display: block; font-size: 24px; margin-bottom: 10px;}
 #txtbox2 li h2 {font-size: 60px; font-weight: 700; margin-bottom: 30px;}
 #txtbox2 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
@@ -289,10 +291,15 @@ ul, li {list-style: none;}
 #txtbox2 #btn3 {top: 295px; left: 275px;}
 #txtbox2 #btn4 {top: 295px; left: 389px;}
 #txtbox2 #btn5 {top: 295px; left: 503px;}
-.hover {}
+.mdopen_btn:hover {mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%); mask-size: 200%; animation: shine 1.5s infinite ease-out alternate; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.746);}
+  
+@keyframes shine {
+    0% {-webkit-mask-position: 150%;}
+    100% {-webkit-mask-position: -50%; transform: translateY(7px) rotate(45deg);}
+}
 
 /* 열려질 상세 모달 */
-#dim, .md_cnt {position: fixed; z-index: 700;}
+#dim, .md_cnt {position: fixed; z-index: 2000;} /* z-index: 700; */
 #dim {/* display: none; */ top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
 .md_cnt {width: 1400px; height: 750px; visibility: hidden; background: #fff; padding: 50px;top: 50%;left: 50%;transform: translate(-50%, -50%);}
 .md_cnt .mdclose_btn {position: absolute; right: 15px; top: 15px; width: 70px; height: 70px; cursor: pointer;}
@@ -300,12 +307,44 @@ ul, li {list-style: none;}
 .md_cnt .mdclose_btn .border_2 {position: absolute; top: 0; width: 2px; height: 70px; transform: rotate(-45deg); background: #000;}
 
 /* -------------------------작업물 상세페이지------------------------- */
-#detail {display: flex; justify-content: center; z-index: 600; background: linear-gradient(-90deg,#141E21, #2F3D35); /* display: none; */}
-#bottle {width: 850px; top: 215px; left: -50px;}
-#wavebtn6 {top: 555px; right: -360px;}
+#detail {display: flex; justify-content: center; z-index: 600; background: linear-gradient(-90deg,#141E21, #2F3D35);}
+#bottle {width: 850px; top: 190px; left: -50px;}
+#wavebtn6 {top: 530px; right: -360px; z-index: 590;}
+.wavebtn .txt4, .wavebtn .circle {display: block;}
+.wavebtn .txt4 {position: absolute; top: 76px; left: 5px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
+
+/* Smoke container */
+#smoke {position: absolute; width: 1px; height: 160px; left: 290px; top: 470px; z-index: 580;}
+
+/* smoke balls */
+#smoke span {display: block; position: absolute; left: 200px; top: 40px; margin-left:-20px; height: 0px; width: 0px; border: 65px solid #F4FC1B; border-radius: 50%; left: -14px; opacity: 0; transform: scale(0.2)}
+
+/* Smoke animation */
+@keyframes smokeL {
+	0%   {transform: scale(0.2) translate(0, 0);}
+	10%  {opacity: 1; transform: scale(0.2) translate(0, -5px);}
+	100% {opacity: 0; transform: scale(1) translate(-20px, -200px);}
+}
+
+@keyframes smokeR {
+	0%   {transform: scale(0.2) translate(0, 0);}
+	10%  {opacity: 1; transform: scale(0.2) translate(0, -5px);}
+	100% {opacity: 0; transform: scale(1) translate(20px, -200px);}
+}
+
+#smoke .s0 {animation: smokeL 10s 0s infinite}
+#smoke .s1 {animation: smokeR 10s 1s infinite}
+#smoke .s2 {animation: smokeL 10s 2s infinite}
+#smoke .s3 {animation: smokeR 10s 3s infinite}
+#smoke .s4 {animation: smokeL 10s 4s infinite}
+#smoke .s5 {animation: smokeR 10s 5s infinite}
+#smoke .s6 {animation: smokeL 10s 6s infinite}
+#smoke .s7 {animation: smokeR 10s 7s infinite}
+#smoke .s8 {animation: smokeL 10s 8s infinite}
+#smoke .s9 {animation: smokeR 10s 9s infinite}
 
 /* 글 */
-.txtbox3 {position: relative; color: #fff; text-align: left; width: 570px; margin: 350px 0 0 -720px;}
+.txtbox3 {position: relative; color: #fff; text-align: left; width: 570px; margin: 340px 0 0 -700px;}
 .txtbox3 li span {display: block; font-size: 24px; margin-bottom: 10px;}
 .txtbox3 li h2 {font-size: 60px; font-weight: 700; margin-bottom: 30px;}
 .txtbox3 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
@@ -322,14 +361,12 @@ ul, li {list-style: none;}
 .txtbox3 #btn4-2 {top: 295px; left: 349px;}
 
 /* -------------------------제품광고포스터 페이지------------------------- */
-#product {display: flex; justify-content: center; z-index: 500; background: linear-gradient(130deg,#775172,#FCB16E,#FCB16E); /* display: none; */}
+#product {display: flex; justify-content: center; z-index: 500; background: linear-gradient(130deg,#775172,#FCB16E,#FCB16E);}
 #start {position: relative; width: 1300px; top: -20px; left: 315px; z-index: 480;}
 #arrive {width: 880px; left: -280px; bottom: -5px; z-index: 490;}
 #acter7 {width: 72px; left: 534px; top: 267px; z-index: 490; animation: animate2 1.3s infinite alternate;}
 #acter7.move {animation: arrive 2s forwards;}
 #shine {width: 104px; left: 14px; bottom: 226px; z-index: 495;}
-
-.moveArrive {animation: arrive 3s alternate ease-out;}
 
 @keyframes animate2 {
     0% {transform: translate(0,-6px);}
@@ -338,13 +375,13 @@ ul, li {list-style: none;}
 
 @keyframes arrive {
     0% {transform: translate(0,0);}
-    100% {transform: translate(-538px,340px);}
+    100% {transform: translate(-500px,300px);}
 }
 
 /* wave 버튼위치 */
 .wavebtn .tx, .wavebtn .circle {display: block;}
 .wavebtn .tx {position: absolute; top: 36px; left: 60px; line-height: 10px; width: 100%; text-align: center; color: #fff;}
-#wavebtn7 {top: 310px; left: 565px; z-index: 500;}
+#wavebtn7 {top: 310px; left: 525px; z-index: 500;}
 
 /* 뒤에 산배경 */
 #bg {top: 120px; left: -310px;}
@@ -363,7 +400,7 @@ ul, li {list-style: none;}
 #bg_clou #bg_clou7 {width: 63px; top: 60px; left: 23px; z-index: 460;}
 
 /* 글 */
-#txtbox4 {color: #fff; text-align: right; width: 570px; top: 530px; left: 900px; z-index: 500;}
+#txtbox4 {color: #fff; text-align: right; width: 570px; top: 500px; left: 930px; z-index: 500;}
 #txtbox4 li span {display: block; font-size: 24px; margin-bottom: 10px;}
 #txtbox4 li h2 {width: 570px; font-size: 60px; font-weight: 700; margin-bottom: 30px;}
 #txtbox4 li .p_1 {font-size: 17px; line-height: 26px; margin-bottom: 60px; opacity: 0.7;}
@@ -381,23 +418,24 @@ ul, li {list-style: none;}
 
 /* -------------------------이벤트 페이지------------------------- */
 #event {display: flex; justify-content: center; z-index: 400; background: url("../svg/8event/backgrond8.svg") no-repeat center; 
-    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; /* display: none; */}
-#pump {width: 950px;; top: 140px; left: -140px; z-index: 390;}
-#acter8 {width: 200px; top: 270px; right: -760px; z-index: 380;}
-#shine8 {width: 630px; top: -60px; right: -635px; z-index: 390;}
-#magicEffect {width: 170px; top: 330px; right: -380px; z-index: 390; opacity: 0;}
+    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover;}
+#pump {width: 950px;; top: 100px; left: -140px; z-index: 390;}
+#acter8 {width: 200px; top: 260px; right: -760px; z-index: 380;}
+#shine8 {width: 630px; top: -120px; right: -635px; z-index: 390;}
 
 /* wave 버튼위치 */
 #wavebtn8 {top: 360px; left: 520px; z-index: 400;}
 
 /* -------------------------목표 및 포부------------------------- */
 #goal {display: flex; justify-content: center; z-index: 300; background: url("../svg/9goal/background9.svg") no-repeat center; 
-    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; /* display: none; */}
+    -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover;}
 #stage {width: 1300px; bottom: -50px; left: -680px; z-index: 270;}
-#curtain {width: 310px; top: -20px; right: 950px; z-index: 280;} 
+#curtain {width: 310px; top: -70px; right: 940px; z-index: 280;} 
+#acter9 {width: 700px; top: 497px; left: -615px; z-index: 290;}
+#shine99 {width: 750px; top: 10px; left: -370px; z-index: 290;}
 
 /* wave 버튼위치 */
-#wavebtn9 {top: 550px; right: 1050px; z-index: 290;}
+#wavebtn9 {top: 507px; right: 1055px; z-index: 300;}
 
 /* 글 */
 #txtbox5 {position: relative; color: #fff; text-align: right; width: 570px; top: 260px; left: 480px;}

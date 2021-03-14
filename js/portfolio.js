@@ -1,13 +1,13 @@
 $(document).ready(function () {
     var timer = 0;
-    $('.wavebtn').on('click', function () {
-        $(this).hide(0, function () {
-            console.log($(this).css('display'));
-        });
 
+    // 기초 설정 : 모든 .scene을 숨기고 로딩후 #go만 보여지게 함
+    $('#go').css({visibility: 'visible', opacity: 1});
+
+    $('.wavebtn').on('click', function () {
         /* 애니메이션 무한 작동 */
         if ($(this).is('#wavebtn1')) {
-            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/MagicCastle_', 145)
+            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/MagicCastle_', 145);
         } else {
             clearTimeout(timer);
         }
@@ -15,46 +15,48 @@ $(document).ready(function () {
         /* 애니메이션 한번 작동 */
         if ($(this).is('#wavebtn1')) {
             animation(7, '#go img', 'svg/1go/door_', 130);
-            animationRepeat(8, '#castle img#magic', 'svg/2castle/MagicCastle_', 145);
-        }
-        else if ($(this).is('#wavebtn3')) {
+            // animationRepeat(8, '#castle img#magic', 'svg/2castle/MagicCastle_', 145); 라인9에서 호출하여 삭제
+            $('#cosmic').addClass('on');
+        } else if ($(this).is('#wavebtn2')) {
+            $('#skill .other-circle').removeAttr('style');
+            $('.wave2 .letter').show();
+        } else if ($(this).is('#wavebtn3')) {
             $('#self .area').addClass('in');
             transitionDelay();
-        }
-        else if ($(this).is('#wavebtn4')) {
+            open = false;  // 다시 skill 클릭할수 있도록 변수값 초기화
+        } else if ($(this).is('#wavebtn4')) {
             animation(9, '#self #poster', 'svg/4self/poster_', 150);
+            $('#wavebtn4').prev('#speech').fadeOut(800);
             $('#main .area').addClass('in');
             transitionDelay();
-        }
-        else if ($(this).is('#wavebtn5')) {
+        } else if ($(this).is('#wavebtn5')) {
             animation(13, '#main #window', 'svg/5mainpage/window_', 135);
             $('#detail .area').addClass('in');
             transitionDelay();
-        }
-        else if ($(this).is('#wavebtn6')) {
+        } else if ($(this).is('#wavebtn6')) {
             $('#product .area').addClass('in');
             transitionDelay();
-        }
-        else if ($(this).is('#wavebtn7')) {
+        } else if ($(this).is('#wavebtn7')) {
             $('#acter7').addClass('move');
             setTimeout(function () {
                 $('#event .area').addClass('in');
                 transitionDelay();
-            }, 2000);
-        }
-        else if ($(this).is('#wavebtn8')) {
-            animation(11, '#event #pump', 'svg/8event/pumpkin_', 130);
+            }, 1000);
+        } else if ($(this).is('#wavebtn8')) {
+            animation(12, '#event #pump', 'svg/8event/pumpkin_', 130);
             $('#goal .area').addClass('in');
             transitionDelay();
-        }
-        else if ($(this).is('#wavebtn9')) {
+        } else if ($(this).is('#wavebtn9')) {
+            animation(15, '#goal #acter9', 'svg/9goal/character9_', 130);
             $('#end .area').addClass('in');
             transitionDelay();
         }
 
         /* 다음 화면으로 넘어가기 */
-        var tgId = $(this).closest('.scene').attr('id');
-        transform('#' + tgId, 1400);
+        var current = $(this).closest('.scene').attr('id');  //현재 .scene의 id명
+        var next = $('#' + current).next().attr('id');    //다음에 보여질 .scene의 id명
+        // console.log(current, next);
+        transform(current, next, 1250);
     });
 
     /* 애니메이션 한번 작동 */
@@ -64,7 +66,7 @@ $(document).ready(function () {
         var go = setInterval(function () {
             //2) 이전 사진보다 1씩 증가시키기
             current++;
-            console.log(current);
+            //console.log(current);
 
             //3) 사진이 7이 되면 setInterval를 멈추기
             if (current === maxNum) clearInterval(go);
@@ -95,7 +97,7 @@ $(document).ready(function () {
     function transitionDelay() {
         $('.fade.in .effect').each(function () {
             var orderNum = $(this).data('order');
-            var delay = (orderNum * 0.6) + 3;
+            var delay = (orderNum * 0.6) + 2.7;
             $(this).css('transitionDelay', delay + 's');
         });
     }
@@ -112,7 +114,6 @@ $(document).ready(function () {
                 "opacity": 1,
                 "transform": "translate(750px,360px)",
             });
-            open = true;
             $('.one2').css({
                 "opacity": 1,
                 "transform": "translate(-760px,360px)",
@@ -122,8 +123,6 @@ $(document).ready(function () {
                     "opacity": 1,
                     "transform": "translate(520px,200px)",
                 });
-            }, 1000);
-            setTimeout(function () {
                 $('.two2').css({
                     "opacity": 1,
                     "transform": "translate(-530px,200px)",
@@ -134,8 +133,6 @@ $(document).ready(function () {
                     "opacity": 1,
                     "transform": "translate(280px,80px)",
                 });
-            }, 2000);
-            setTimeout(function () {
                 $('.three2').css({
                     "opacity": 1,
                     "transform": "translate(-290px,80px)",
@@ -146,31 +143,54 @@ $(document).ready(function () {
         $("#heart , #wavebtn3").css("opacity", 1);
     });
 
-    /* 자기소개페이지 버튼효과 */
-    $('#wavebtn4').click(function () {
-        $(this).prev('#speech').fadeOut(800);
-    });
-
     /* 다음 화면으로 넘어가기 */
-    function transform(tg, duration) {
+    function transform(currentScene, nextScene, duration) {
+        // 현재 보여지는 .scene을 위로 올리기 (다음에 보여질 .scene 보다 위에 있도록 함)
+        $('#' + currentScene).addClass('z-up').siblings('.scene').removeClass('z-up');
+        // 다음에 보여질 .scene을 초기화
+        $('#' + nextScene).css({visibility: 'visible', opacity : 1});
         setTimeout(function () {
-            $(tg).stop().fadeOut(700)
+            // console.log($('#' + currentScene));
+            // console.log($('#' + nextScene));
+            $('#' + currentScene).stop().animate({opacity: 0}, 700, function () {
+                $(this).css('visibility', 'hidden').find('.fade').removeClass('in').find('.effect').removeAttr('style');
+                $('body').attr('data-view', nextScene);
+            });
         }, duration);
     }
 
     // #gnb 홈 a 클릭하는 경우만 깃발 펄럭이는 함수 호출
-    $('#gnb ul li').children().on('click', function (e) {
+    $('.gnb ul li').children().on('click', function (e) {
         e.preventDefault();
-        if ($(this).parent().index() === 0) {
-            timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
-        } else {
-            clearTimeout(timer);
-        }s
-    });
 
-    /* 제품광고페이지 버튼이벤트 */
-    $('#wavebtn7').click(function () {
-        $('#acter7').css();
+        var current = $('body').attr('data-view');
+        var next = $(this).attr('href');
+        // if ($(this).parent().index() === 0) timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
+        // else clearTimeout(timer);
+        
+        // console.log(current, next);
+        transform(current, next, 1250);
+
+        var tgNum = $(this).parent().index();
+        if (tgNum === 0) {  // home => #castle
+            $('#cosmic').addClass('on');
+        } else if (tgNum === 1) {  // about => #self
+            $('#self .area').addClass('in');
+            transitionDelay();
+        } else if (tgNum === 2) { // skill => #space
+            // 다시 스킬을 클릭할수 있도록 초기화
+            $('#skill .other-circle').removeAttr('style');
+            $('.wave2 .letter').show();
+            open = false;  // 다시 skill 클릭할수 있도록 변수값 초기화
+        } else if (tgNum === 3) { // portfolio => #main
+            $('#main .area').addClass('in');
+            transitionDelay();
+        } else if (tgNum === 4) { // goal => #goal
+            $('#goal .area').addClass('in');
+            transitionDelay();
+        }
+
+
     });
 
     /* 모달 */
@@ -259,6 +279,5 @@ $(document).ready(function () {
             //console.log(e.keyCode); //27
             if (e.keyCode === 27) _closeBtn.click();
         });
-
     });
 });

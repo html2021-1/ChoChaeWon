@@ -1,0 +1,28 @@
+.scene
+1) 로딩페이지
+#go
+#wavebtn1
+2) 처음페이지
+#castle
+3) 스킬페이지
+#space
+4) 자기소개 페이지
+#self
+5) 작업물 메인페이지
+#main
+6) 작업물 상세페이지
+#detail
+7) 작업물 제품광고포스터 페이지
+#product
+8) 작업물 이벤트 페이지
+#event
+9) 목표 및 포부
+#goal
+10) 마지막페이지
+#end
+
+home => #castle
+about => #self
+skill => #space
+portfolio => #main
+goal => #goal

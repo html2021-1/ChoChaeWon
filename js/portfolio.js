@@ -165,6 +165,9 @@ $(document).ready(function () {
 
         var current = $('body').attr('data-view');
         var next = $(this).attr('href');
+
+        if (current === next) return false;
+        
         // if ($(this).parent().index() === 0) timer = animationRepeat(8, '#castle img#magic', 'svg/2castle/Magic castle_', 145)
         // else clearTimeout(timer);
         

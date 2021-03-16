@@ -71,6 +71,8 @@ $(document).ready(function () {
         var current = 1; //현재 화면에 보여지는 이미지의 숫자
   
         var go = setInterval(function () {
+            clearInterval(go);
+            
             //2) 이전 사진보다 1씩 증가시키기
             current++;
             //console.log(current);
